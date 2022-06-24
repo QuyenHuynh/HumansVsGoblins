@@ -3,16 +3,18 @@ public class Human {
     String name;
     int health;
     int strength;
+    int defence;
 
     boolean dead;
 
     //default constructor
     public Human(){}
 
-    public Human(String name, int health, int strength, boolean dead) {
+    public Human(String name, int health, int strength, int defence, boolean dead) {
         this.name = name;
         this.health = health;
         this.strength = strength;
+        this.defence = defence;
         this.dead = dead;
     }
 
@@ -40,6 +42,14 @@ public class Human {
         this.strength = strength;
     }
 
+    public int getDefence() {
+        return defence;
+    }
+
+    public void setDefence(int defence) {
+        this.defence = defence;
+    }
+
     public boolean isDead() {
         return dead;
     }
@@ -55,5 +65,8 @@ public class Human {
         goblin.setHealth(newHp);
         return goblin;
     }
+
+    //TODO Allow humans to level up, equip weapons, armor, and shop via merchants
+    //TODO Add an inventory and possibly potions/rest spots
 
 }

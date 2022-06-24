@@ -3,15 +3,17 @@ public class Goblin {
 
     int health;
     int strength;
+    int defence;
 
     boolean dead;
 
     //default constructor
     public Goblin(){}
 
-    public Goblin(int health, int strength, boolean dead) {
+    public Goblin(int health, int strength, int defence, boolean dead) {
         this.health = health;
         this.strength = strength;
+        this.defence = defence;
         this.dead = dead;
     }
 
@@ -31,6 +33,14 @@ public class Goblin {
         this.strength = strength;
     }
 
+    public int getDefence() {
+        return defence;
+    }
+
+    public void setDefence(int defence) {
+        this.defence = defence;
+    }
+
     public boolean isDead() {
         return dead;
     }
@@ -46,4 +56,6 @@ public class Goblin {
         human.setHealth(newHp);
         return human;
     }
+
+    //TODO Make goblins drop gold, items, and exp
 }
