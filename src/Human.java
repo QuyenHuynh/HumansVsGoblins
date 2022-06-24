@@ -9,8 +9,6 @@ public class Human {
     boolean dead;
     int positionX;
     int positionY;
-
-    //TODO Adjust methods to include weapon and armor strengths
     Armor armor;
     Weapon weapon;
     Inventory inventory;
@@ -158,6 +156,17 @@ public class Human {
         System.out.println("Weapon: " + human.getWeapon());
         System.out.println("Armor: " + human.getArmor());
         System.out.println("==========================================");
+    }
+
+    public void equipWeapon(Human human, Weapon weapon) {
+        human.setWeapon(weapon);
+        human.setStrength(human.getStrength() + weapon.getStrength());
+        System.out.println(weapon.getName() + " equipped.");
+    }
+    public void equipArmor(Human human, Armor armor) {
+        human.setArmor(armor);
+        human.setDefence(human.getDefence() + armor.getDefence());
+        System.out.println(armor.getName() + " equipped.");
     }
 
     //TODO Allow humans to level up, equip weapons, armor, and shop via merchants

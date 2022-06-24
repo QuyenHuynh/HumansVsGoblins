@@ -35,12 +35,6 @@ public class Weapon {
         weaponsList.add(adamantSword);
     }
 
-    public void equipWeapon(Human human, Weapon weapon) {
-        human.setWeapon(weapon);
-        human.setStrength(human.getStrength() + weapon.getStrength());
-        System.out.println(weapon.getName() + " equipped.");
-    }
-
     public String getName() {
         return name;
     }
