@@ -34,6 +34,11 @@ public class Main {
     }
 
     public static void newGameIntroduction(Human human) {
+
+        System.out.println("==========================================");
+        System.out.println("     Welcome to Humans vs. Goblins        ");
+        System.out.println("==========================================");
+        System.out.println();
         askName(human);
         askHowtoPlay(human);
     }

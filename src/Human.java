@@ -4,18 +4,25 @@ public class Human {
     int health;
     int strength;
     int defence;
-
     boolean dead;
+    int positionX;
+    int positionY;
 
     //default constructor
-    public Human(){}
+    public Human(){
+        this.health = 100;
+        this.strength = 10;
+        this.defence = 2;
+    }
 
-    public Human(String name, int health, int strength, int defence, boolean dead) {
+    public Human(String name, int health, int strength, int defence, boolean dead, int positionX, int positionY) {
         this.name = name;
         this.health = health;
         this.strength = strength;
         this.defence = defence;
         this.dead = dead;
+        this.positionX = positionX;
+        this.positionY = positionY;
     }
 
     public String getName() {
@@ -50,6 +57,22 @@ public class Human {
         this.defence = defence;
     }
 
+    public int getPositionX() {
+        return positionX;
+    }
+
+    public void setPositionX(int positionX) {
+        this.positionX = positionX;
+    }
+
+    public int getPositionY() {
+        return positionY;
+    }
+
+    public void setPositionY(int positionY) {
+        this.positionY = positionY;
+    }
+
     public boolean isDead() {
         return dead;
     }
@@ -71,5 +94,6 @@ public class Human {
 
     //TODO Allow humans to level up, equip weapons, armor, and shop via merchants
     //TODO Add an inventory and possibly potions/rest spots
+    //TODO Create status ailments
 
 }

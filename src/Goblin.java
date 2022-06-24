@@ -1,20 +1,27 @@
 
 public class Goblin {
 
-    int health = 20;
-    int strength = 5;
-    int defence = 1;
-
+    int health;
+    int strength;
+    int defence;
     boolean dead;
+    int positionX;
+    int positionY;
 
     //default constructor
-    public Goblin(){}
+    public Goblin(){
+        this.health = 20;
+        this.strength = 8;
+        this.defence = 1;
+    }
 
-    public Goblin(int health, int strength, int defence, boolean dead) {
+    public Goblin(int health, int strength, int defence, boolean dead, int positionX, int positionY) {
         this.health = health;
         this.strength = strength;
         this.defence = defence;
         this.dead = dead;
+        this.positionX = positionX;
+        this.positionY = positionY;
     }
 
     public int getHealth() {
@@ -39,6 +46,22 @@ public class Goblin {
 
     public void setDefence(int defence) {
         this.defence = defence;
+    }
+
+    public int getPositionX() {
+        return positionX;
+    }
+
+    public void setPositionX(int positionX) {
+        this.positionX = positionX;
+    }
+
+    public int getPositionY() {
+        return positionY;
+    }
+
+    public void setPositionY(int positionY) {
+        this.positionY = positionY;
     }
 
     public boolean isDead() {
