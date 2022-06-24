@@ -79,6 +79,8 @@ public class Main {
             System.out.println("Be careful though! They'll fight back.");
             System.out.println("You can learn the rest as you go along.");
             System.out.println("That's it! Good luck on your journey!");
+
+            //add help command
         } else {
             System.out.println("Great! Good luck on your journey!");
         }
@@ -104,6 +106,28 @@ public class Main {
             System.out.println("Bye-bye now!");
             System.exit(0);
         }
+    }
+
+    public void dropItem() {
+
+        //iterate through weapons list
+        for (Weapon weapon : Weapon.weaponsList) {
+
+        }
+
+
+        //iterate through armors list
+
+
+
+        System.out.println("The goblin dropped something!");
+
+        //add it to the inventory if it's not full
+        //if no weapon or armor is equipped, automatically equip it.
+
+
+        //if inventory is full, ask if the players wants to discard an item.
+
     }
 
 }

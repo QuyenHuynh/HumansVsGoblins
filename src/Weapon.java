@@ -10,7 +10,7 @@ public class Weapon {
 
     int cost;
 
-    ArrayList<Weapon> weaponsList = new ArrayList<>();
+    static ArrayList<Weapon> weaponsList = new ArrayList<>();
 
     public Weapon(String name, int strength, double dropRate, int cost) {
         this.name = name;
@@ -23,7 +23,7 @@ public class Weapon {
         Weapon woodenSword = new Weapon("Wooden Sword", 3, .25, 1);
         Weapon bronzeSword = new Weapon("Bronze Sword", 7, .15, 5);
         Weapon ironSword = new Weapon("Iron Sword", 14, .05, 20);
-        Weapon steelSword = new Weapon("Wooden Sword", 20, .03, 35);
+        Weapon steelSword = new Weapon("Steel Sword", 20, .03, 35);
         Weapon mithrilSword = new Weapon("Mithril Sword", 35, .02, 55);
         Weapon adamantSword = new Weapon("Adamant Sword", 40, .01, 80);
 
@@ -33,6 +33,12 @@ public class Weapon {
         weaponsList.add(steelSword);
         weaponsList.add(mithrilSword);
         weaponsList.add(adamantSword);
+    }
+
+    public void equipWeapon(Human human, Weapon weapon) {
+        human.setWeapon(weapon);
+        human.setStrength(human.getStrength() + weapon.getStrength());
+        System.out.println(weapon.getName() + " equipped.");
     }
 
     public String getName() {

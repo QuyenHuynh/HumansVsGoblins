@@ -1,28 +1,36 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Inventory {
 
-    enum BagSize {
-        SMALL,
-        MEDIUM,
-        LARGE
+    int maxInventorySize;
+
+    ArrayList<Object> inventory;
+
+    //default constructor
+    public Inventory() {
+        this.maxInventorySize = 5;
     }
 
-    int space;
-
-    ArrayList<Object> inventory = new ArrayList<>();
-
-    public Inventory(int space, ArrayList<Object> inventory) {
-        this.space = space;
+    public Inventory(int maxInventorySize, ArrayList<Object> inventory) {
+        this.maxInventorySize = maxInventorySize;
         this.inventory = inventory;
     }
 
-    public int getSpace() {
-        return space;
+    public void removeItem(Object item) {
+        inventory.remove(item);
     }
 
-    public void setSpace(int space) {
-        this.space = space;
+    public void addItem(Object item) {
+        inventory.add(item);
+    }
+
+    public int getMaxInventorySize() {
+        return maxInventorySize;
+    }
+
+    public void setMaxInventorySize(int maxInventorySize) {
+        this.maxInventorySize = maxInventorySize;
     }
 
     public ArrayList<Object> getInventory() {
@@ -32,4 +40,6 @@ public class Inventory {
     public void setInventory(ArrayList<Object> inventory) {
         this.inventory = inventory;
     }
+
+
 }

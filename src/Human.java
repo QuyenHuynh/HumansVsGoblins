@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Human {
 
     String name;
@@ -8,6 +10,14 @@ public class Human {
     int positionX;
     int positionY;
 
+    //TODO Adjust methods to include weapon and armor strengths
+    Armor armor;
+    Weapon weapon;
+    Inventory inventory;
+
+    boolean weaponEquipped;
+    boolean armorEquipped;
+
     //default constructor
     public Human(){
         this.health = 100;
@@ -15,7 +25,7 @@ public class Human {
         this.defence = 2;
     }
 
-    public Human(String name, int health, int strength, int defence, boolean dead, int positionX, int positionY) {
+    public Human(String name, int health, int strength, int defence, boolean dead, int positionX, int positionY, Armor armor, Weapon weapon, Inventory inventory, boolean weaponEquipped, boolean armorEquipped) {
         this.name = name;
         this.health = health;
         this.strength = strength;
@@ -23,6 +33,11 @@ public class Human {
         this.dead = dead;
         this.positionX = positionX;
         this.positionY = positionY;
+        this.armor = armor;
+        this.weapon = weapon;
+        this.inventory = inventory;
+        this.weaponEquipped = weaponEquipped;
+        this.armorEquipped = armorEquipped;
     }
 
     public String getName() {
@@ -81,6 +96,46 @@ public class Human {
         this.dead = dead;
     }
 
+    public Armor getArmor() {
+        return armor;
+    }
+
+    public void setArmor(Armor armor) {
+        this.armor = armor;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+    }
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
+
+    public boolean isWeaponEquipped() {
+        return weaponEquipped;
+    }
+
+    public void setWeaponEquipped(boolean weaponEquipped) {
+        this.weaponEquipped = weaponEquipped;
+    }
+
+    public boolean isArmorEquipped() {
+        return armorEquipped;
+    }
+
+    public void setArmorEquipped(boolean armorEquipped) {
+        this.armorEquipped = armorEquipped;
+    }
+
     public void attack(Goblin goblin) {
         int hp = goblin.getHealth();
         int str = strength;
@@ -90,6 +145,19 @@ public class Human {
         if (goblin.getHealth() <= 0 ) {
             goblin.setDead(true);
         }
+    }
+
+    public void printStats(Human human) {
+        System.out.println("==========================================");
+        System.out.println("                  STATUS                  ");
+        System.out.println("==========================================");
+        System.out.println("Name: " + human.getName());
+        System.out.println("Health: " + human.getHealth());
+        System.out.println("Strength: " + human.getStrength());
+        System.out.println("Defence: " + human.getDefence());
+        System.out.println("Weapon: " + human.getWeapon());
+        System.out.println("Armor: " + human.getArmor());
+        System.out.println("==========================================");
     }
 
     //TODO Allow humans to level up, equip weapons, armor, and shop via merchants
