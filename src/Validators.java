@@ -5,6 +5,7 @@ public class Validators {
 
     static boolean validName;
     static boolean validHowtoPlay;
+    static boolean validRestart;
 
     public static void validNameCheck(String name) throws CustomException {
         //match for only letters and white space
@@ -30,6 +31,19 @@ public class Validators {
 
         if (input.trim().equals("y") || input.trim().equals("n")) {
             validHowtoPlay = true;
+        } else {
+            System.out.println("Not a valid input. Try again.");
+            throw new CustomException();
+        }
+    }
+
+    static void validRestartCheck(String input) throws CustomException {
+        if (input.isBlank()) {
+            System.out.println("Blank input. Enter 'y' or 'n'.");
+        }
+
+        if (input.trim().equals("y") || input.trim().equals("n")) {
+            validRestart = true;
         } else {
             System.out.println("Not a valid input. Try again.");
             throw new CustomException();

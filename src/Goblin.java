@@ -1,9 +1,9 @@
 
 public class Goblin {
 
-    int health;
-    int strength;
-    int defence;
+    int health = 20;
+    int strength = 5;
+    int defence = 1;
 
     boolean dead;
 
@@ -49,12 +49,15 @@ public class Goblin {
         this.dead = dead;
     }
 
-    public Human attack(Human human) {
+    public void attack(Human human) {
         int hp = human.getHealth();
         int str = strength;
         int newHp = hp - str;
         human.setHealth(newHp);
-        return human;
+
+        if (human.getHealth() <= 0 ) {
+            human.setDead(true);
+        }
     }
 
     //TODO Make goblins drop gold, items, and exp

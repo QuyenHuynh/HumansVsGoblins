@@ -58,12 +58,15 @@ public class Human {
         this.dead = dead;
     }
 
-    public Goblin attack(Goblin goblin) {
+    public void attack(Goblin goblin) {
         int hp = goblin.getHealth();
         int str = strength;
         int newHp = hp - str;
         goblin.setHealth(newHp);
-        return goblin;
+
+        if (goblin.getHealth() <= 0 ) {
+            goblin.setDead(true);
+        }
     }
 
     //TODO Allow humans to level up, equip weapons, armor, and shop via merchants

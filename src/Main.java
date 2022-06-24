@@ -8,17 +8,32 @@ public class Main {
     }
 
     public static void startNewGame() {
+        Human human = new Human();
+        newGameIntroduction(human);
 
-        newGameIntroduction();
+        while (!human.isDead()) {
 
+            //TODO Generate land
+            //TODO Display land
+
+            //TODO Ask where to move
+
+//            human.setDead(true);
+        }
+
+        askRestart();
+
+    }
+
+    public static void startNewGamePlus() {
+        //TODO Player gets to keep items on death
     }
 
     public static void resetGame() {
 
     }
 
-    public static void newGameIntroduction() {
-        Human human = new Human();
+    public static void newGameIntroduction(Human human) {
         askName(human);
         askHowtoPlay(human);
     }
@@ -61,6 +76,28 @@ public class Main {
             System.out.println("That's it! Good luck on your journey!");
         } else {
             System.out.println("Great! Good luck on your journey!");
+        }
+    }
+
+    public static void askRestart() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Oh dear! You died!");
+        System.out.println("Would you like to play again? y/n");
+        String input = scan.nextLine().toLowerCase();
+        while (!Validators.validRestart) {
+            try {
+                Validators.validRestartCheck(input);
+            } catch (CustomException e) {
+                input = scan.nextLine();
+            }
+        }
+
+        if (input.trim().equals("y")) {
+            startNewGame();
+            //WIP New Game Plus
+        } else {
+            System.out.println("Bye-bye now!");
+            System.exit(0);
         }
     }
 
