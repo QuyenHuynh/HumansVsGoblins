@@ -22,6 +22,7 @@ public class Armor {
         this.cost = cost;
     }
 
+    //TODO Convert armors into an interface with helmet, chest, and leggings as classes
     public void createArmor() {
         Armor woodenArmor = new Armor("Wooden Armor", 3, .25, 1);
         Armor bronzeArmor = new Armor("Bronze Armor", 7, .15, 5);

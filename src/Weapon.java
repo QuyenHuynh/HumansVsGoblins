@@ -10,6 +10,9 @@ public class Weapon {
 
     int cost;
 
+    //TODO implement weapons other than swords
+    int attackRange;
+
     static ArrayList<Weapon> weaponsList = new ArrayList<>();
 
     public Weapon(String name, int strength, double dropRate, int cost) {
@@ -19,6 +22,7 @@ public class Weapon {
         this.cost = cost;
     }
 
+    //TODO Convert weapons into an interface with Swords, Bows, Axes, Spears, etc. as classes
     public void createWeapons() {
         Weapon woodenSword = new Weapon("Wooden Sword", 3, .25, 1);
         Weapon bronzeSword = new Weapon("Bronze Sword", 7, .15, 5);

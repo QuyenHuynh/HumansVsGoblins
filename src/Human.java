@@ -12,7 +12,6 @@ public class Human {
     Armor armor;
     Weapon weapon;
     Inventory inventory;
-
     boolean weaponEquipped;
     boolean armorEquipped;
 
